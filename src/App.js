@@ -6,7 +6,7 @@ import Body from './Component/Body'
 import About from './Component/About'
 import Contact from './Component/Contact ';
 import Error from './Component/Error';
-import { createBrowserRouter,RouterProvider,Outlet } from 'react-router-dom'
+import { createBrowserRouter,Outlet } from 'react-router-dom'
 const App = () => {
   return (
     <  div className='app'>
@@ -15,7 +15,8 @@ const App = () => {
     </ div>
   )
 }
-const appRouter=createBrowserRouter([
+
+ export const appRouter=createBrowserRouter([
   {
     path:"/",
     element:<App/>,
@@ -35,6 +36,5 @@ element:<About/>
     errorElement:<Error/>
   }
 ])
-const root=ReactDOM.createRoot(document.getElementById("root"));
-root.render(<RouterProvider router={appRouter}/>)
+
 export default App
