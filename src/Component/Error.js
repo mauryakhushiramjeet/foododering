@@ -1,15 +1,13 @@
 import React from 'react'
-// import { useRouteError } from 'react-router-dom'
+import { useRouteError } from 'react-router-dom'
 
 const Error = () => {
-    // let erro=useRouteError()
+    let erro=useRouteError()
   return (
    <>
    <h1>opps!!!!</h1>
    <h2>Something went wrong !!!</h2>
-   {/* <h3>{erro.status}:{erro.statusText}</h3> */}
-   
-   {/* {console.log(erro)} */}
+   <h3>{erro.status}:{erro.statusText}</h3>
    </>
   )
 }

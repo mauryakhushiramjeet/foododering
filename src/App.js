@@ -1,12 +1,12 @@
-import React from 'react'
-import "./Style.css"
-import ReactDOM from 'react-dom/client';
+import React, { lazy,Suspense } from 'react'
+import "./index.css"
 import Header from './Component/Header'
 import Body from './Component/Body'
-import About from './Component/About'
 import Contact from './Component/Contact ';
 import Error from './Component/Error';
 import { createBrowserRouter,Outlet } from 'react-router-dom'
+import RestaurentMenu from './Component/RestaurentMenu';
+
 const App = () => {
   return (
     <  div className='app'>
@@ -15,6 +15,9 @@ const App = () => {
     </ div>
   )
 }
+const Grocery= lazy(()=>import("./Component/Grocery"))
+const About= lazy(()=>import("./Component/About"))
+// const Contact= lazy(()=>import("./Component/Contact"))
 
  export const appRouter=createBrowserRouter([
   {
@@ -26,12 +29,20 @@ const App = () => {
     },
       {
 path:"/about",
-element:<About/>
+element:<Suspense fallback={<h1>Loading.....</h1>}><About/></Suspense>
     },
     {
       path:"/contact",
-      element:<Contact/>
+      element:<Suspense fallback={<h1>Loading.....</h1>}><Contact/></Suspense>
     },
+    {
+      path:"/restaurent/:resId",
+      element:<RestaurentMenu/>
+    },
+    {
+      path:"/grocery",
+      element:<Suspense fallback={<h1>Loading.....</h1>}><Grocery/></Suspense>
+    }
     ],
     errorElement:<Error/>
   }

@@ -1,6 +1,5 @@
-
+/* 
 .header{
-    /* margin-top: 3px; */
     display: flex;
     justify-content:space-between;
     border: 2px solid black;
@@ -12,29 +11,30 @@
  .nav-items{
     padding: 0px 30px;
  }
- ul{
+ .nav-items>ul{
     display: flex;
    
  }
- li{
+ .lihead{
     padding:5px 15px;
     margin: 10px;
     font-size: 20px;
     list-style: none;
   color: black;
-    transition: ease-out 0.3s;
+  
  }
- li:hover{
-   font-weight: bold;
-   color: #f9e506;
-    background-color: black;
-    border-radius: 6px;
-    
-
-
- }
+ 
  .search{
     padding: 10px;
+    
+ }
+ .search-button{
+   padding: 7px;
+   color: black;
+   background-color: rgb(194, 250, 194);
+   border: none;
+   outline: none;
+   font-size: 15px;
  }
  .res-card{
     width: 250px;
@@ -54,16 +54,16 @@
  .res-container{
     display: flex;
     flex-wrap: wrap;
-    /* grid-template-columns:repeat(auto-fit,minmax(245px,1fr));
-  grid-gap: 1rem;
-  grid-row-gap:1rem; 
-   */
    margin: 5px 20px;
   
  }
  .filter-btn{
    margin: 10px;
+   border: none;
+   outline: none;
    cursor: pointer;
+   background-color:rgb(208, 247, 247);
+   color: black;
  }
  .login{
    padding: 0 10px;
@@ -73,6 +73,15 @@
  }
  .filter{
    display: flex;
+ }
+ .search-btn{
+   outline: none;
+   border: 1.5px solid black;
+   padding: 5px;
+   width: 30rem;
+   background: transparent;
+   font-size: 15px;
+   
  }
  @media(max-width:676px){
    .header{
@@ -84,7 +93,7 @@
    .nav-items{
       padding: 0px 20px;
    }
-   li{
+   .lihead{
       padding:5px 10px;
       margin: 0 11px;
       font-size: 18px;
@@ -94,9 +103,7 @@
   
  @media(max-width:652px) {
    .res-container{
-      /* display: flex;
-      align-items: center;
-      justify-content: center; */
+    
       margin: 2px 19px;
    }
    .res-logo{
@@ -127,7 +134,7 @@
 .nav-items{
       padding: 0px 20px;
    }
-   li{
+   .lihead{
       padding:5px 5px;
       margin: 0 6px;
       font-size: 15px;
@@ -158,7 +165,7 @@
 .nav-items{
       padding: 0px 10px;
    }
-   li{
+   .lihead{
       padding:0px 2px;
       margin: 0 2px;
       font-size: 15px;
@@ -171,3 +178,7 @@
    margin-left: 3px;
  }
 }
+  */
+  @tailwind base;
+@tailwind components;
+@tailwind utilities; 
