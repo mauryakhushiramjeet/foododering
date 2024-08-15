@@ -16,7 +16,6 @@ const Header = () => {
                         <li className="px-4 hover:font-bold"><Link to="/">Home</Link></li> 
                         <li className="px-4 hover:font-bold"><Link to="/about">  About Us</Link> </li>
                         <li className="px-4 hover:font-bold"><Link to="/contact">Contact us</Link></li>
-                        <li className="px-4 hover:font-bold"><Link to="/grocery">Grocery</Link></li>
                         <li className="px-4 hover:font-bold">Cart</li>
                         <button className="login" onClick={()=>
                             {btn==="Login"

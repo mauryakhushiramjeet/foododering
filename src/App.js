@@ -15,7 +15,6 @@ const App = () => {
     </ div>
   )
 }
-const Grocery= lazy(()=>import("./Component/Grocery"))
 const About= lazy(()=>import("./Component/About"))
 // const Contact= lazy(()=>import("./Component/Contact"))
 
@@ -39,10 +38,7 @@ element:<Suspense fallback={<h1>Loading.....</h1>}><About/></Suspense>
       path:"/restaurent/:resId",
       element:<RestaurentMenu/>
     },
-    {
-      path:"/grocery",
-      element:<Suspense fallback={<h1>Loading.....</h1>}><Grocery/></Suspense>
-    }
+    
     ],
     errorElement:<Error/>
   }
