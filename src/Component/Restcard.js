@@ -1,4 +1,7 @@
+import { useContext } from "react"
+import UserContex from "./UserContex"
 const Restcard = ({datas}) => {
+    const{logdenUser}=useContext(UserContex)
     const {
         name,
         cloudinaryImageId,
@@ -18,6 +21,7 @@ const Restcard = ({datas}) => {
                 <h4>₹{costForTwo} </h4>
                 <h4>{avgRating}Star</h4>
                 <h4>{sla.deliveryTime} min</h4>
+                <h4>{logdenUser}</h4>
             </div>
         </>
     )

@@ -1,11 +1,13 @@
 // import { Restapi } from "./content"
 import Restcard, { withPromotedLabal } from "./Restcard";
 import useOnlineStatus from "./useOnlineStatus";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
-const Body = () => {
+import UserContex from "./UserContex";
 
+const Body = () => {
+    const{setUserName,logdenUser}=useContext(UserContex)
     const [ListofRestaurant, setListOfRestaurant] = useState([])
     const [filteredRestuarent, setFilteredRestuarent] = useState([])
     const [searchText, setsearchText] = useState("")
@@ -35,27 +37,29 @@ const Body = () => {
         <>
             <div className="body" style={{ backgroundColor }} >
                 <div className="filter flex">
-                    <div className="search p-4 m-4">
+                    <div className="search p-3 m-3">
                         <input type="text" className=" border border-solid border-black w-[300px]" value={searchText} onChange={(e) => { setsearchText(e.target.value) }} />
-                        <button className="bg-green-100 px-4 py-2 m-4 rounded-lg" onClick={() => {
+                        <button className="bg-green-100 px-4 py-2 m-3 rounded-lg" onClick={() => {
                             const filterrestaurant = ListofRestaurant.filter((res) =>
                                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
                             );
                             setFilteredRestuarent(filterrestaurant)
-
                         }}> {"🔍"}Search</button>
-
                     </div>
-
-                    <div className="search p-4 m-4 items-center">
-                        <button className=" bg-gray-200 px-4 py-2  m-4 rounded-lg " onClick={() => {
-                            const filterList = ListofRestaurant.filter(
-                                (res) => res.info.avgRating > 4.3
-                            )
-                            setFilteredRestuarent(filterList)
-                        }}>Top Rated Restaurant</button>
+                    <div className="search p-3  items-center flex">
+                        <button
+                            className=" bg-gray-200 px-4 py-2   rounded-lg " onClick={() => {
+                                const filterList = ListofRestaurant.filter(
+                                    (res) => res.info.avgRating > 4.3
+                                )
+                                setFilteredRestuarent(filterList)
+                            }}>Top Rated Restaurant</button>
                     </div>
-                    <div className="items-center m-4 p-4">
+                    <div className="p-3 m-3 items-center flex">
+                        <label style={{color:Textclr}}>User Name-</label>
+                    <input className="border border-black " value={logdenUser} onChange={(e)=>setUserName(e.target.value)}/>
+                    </div>
+                    <div className="items-center m-4 p-4 absolute right-0">
                         <button className=" m-4 px-4 py-2 rounded-lg font-bold   " style={{ backgroundColor: Textclr, color: backgroundColor }} onClick={HandeleMode}>{ }{backgroundColor === "white" ? "Dark-Mode" : "Light-Mode"}</button>
                     </div>
                 </div>

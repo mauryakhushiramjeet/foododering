@@ -1,9 +1,11 @@
-import { useState} from "react";
+import { useContext, useState} from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "./useOnlineStatus";
+import UserContex from "./UserContex";
 const Header = () => {
     const [btn,setbtn]=useState("Login")
     const onlineStatus=useOnlineStatus()
+    const{logdenUser}=useContext(UserContex)
     return (
         <>
             <div className="flex bg-pink-100 justify-between shadow-xl lg:bg-green-50 sm:bg-yellow-50" >
@@ -22,6 +24,7 @@ const Header = () => {
                                 ?setbtn("Logout")
                                 :setbtn("Login")}
                         }>{btn}</button>
+                          <li className="px-4 font-bold">{logdenUser}</li>
                     </ul>
                 </div>
             </div>

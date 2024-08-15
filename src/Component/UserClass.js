@@ -1,4 +1,5 @@
 import React from "react";
+import UserContex from "./UserContex";
 class UserClass extends React.Component{
     constructor(props){
         super(props);
@@ -19,6 +20,12 @@ class UserClass extends React.Component{
                     count:count+1
                 })
             }}>increase count</button>
+            <div>
+                user:
+            <UserContex.Consumer>
+                {({data})=><h1>{data}</h1>}
+            </UserContex.Consumer>
+            </div>
             <h3>Location:Surat</h3>
             <h3>Contact:@mauryakhushi004</h3>
             </div>

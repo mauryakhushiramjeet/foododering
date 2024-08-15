@@ -7,7 +7,7 @@ import { useState } from "react"
 const RestaurentMenu = () => {
     
     const{resId}=useParams()
-    const[ShowIndex,setShowIndex]=useState(0)
+    const[ShowIndex,setShowIndex]=useState(null)
 
   const resInfo=useRestaurentMenu(resId)
     if(resInfo===null){
@@ -25,7 +25,9 @@ const RestaurentMenu = () => {
     // console.log(name)
 
     return (
+      
         <div className='text-center'>
+          
             <h1 className="font-bold my-6 text-2xl">{name}</h1>
           <p className="font-bold text-lg">{cuisines.join(",")}-{costForTwoMessage}</p>
           {categories.map((e,index)=>(
@@ -33,7 +35,7 @@ const RestaurentMenu = () => {
           data={e.card?.card} 
           key={Math.random()*100} 
           ShowItem={index===ShowIndex?true:false}
-          setShowIndex={()=>setShowIndex(index)} />)
+          setShowIndex={()=>ShowIndex===index?setShowIndex(null):setShowIndex(index)} />)
         )}
            
 

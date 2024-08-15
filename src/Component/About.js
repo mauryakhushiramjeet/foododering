@@ -1,6 +1,6 @@
 import React from 'react'
 import User from './User'
-import UserClass from './UserClass'
+// import UserClass from './UserClass'
 import "./About.css"
 const About = () => {
   return (
@@ -9,8 +9,8 @@ const About = () => {
       this is my About router
     
       <User name={"maurya khushi ramjeet( functional)"}/>
-      <UserClass name={"maurya khushi ramjeet( class based)"}/>
-      
+      {/* <UserClass name={"maurya khushi ramjeet( class based)"}/>
+      <UserClass/> */}
     </div>
   )
 }
