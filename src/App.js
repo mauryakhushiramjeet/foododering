@@ -7,6 +7,10 @@ import Error from './Component/Error';
 import { createBrowserRouter,Outlet } from 'react-router-dom'
 import RestaurentMenu from './Component/RestaurentMenu';
 import UserContex from './Component/UserContex';
+import { Provider } from 'react-redux';
+import appStore from './Utill/appStore';
+// import Cart from './Component/Cart';
+
 
 const App = () => {
   const[UserName,setUserName]=useState();
@@ -17,17 +21,20 @@ const data={
 setUserName(data.name)
 },[]);
   return (
+    <Provider store={ appStore}>
 <UserContex.Provider value={{logdenUser:UserName,setUserName}}>
 <  div className='app'>
     <Header/>
     <Outlet/>
     </ div>
 </UserContex.Provider>
+    </Provider>
    
   )
 }
 const About= lazy(()=>import("./Component/About"))
 // const Contact= lazy(()=>import("./Component/Contact"))
+const Cart=lazy(()=>import('./Component/Cart'))
 
  export const appRouter=createBrowserRouter([
   {
@@ -48,6 +55,10 @@ element:<Suspense fallback={<h1>Loading.....</h1>}><About/></Suspense>
     {
       path:"/restaurent/:resId",
       element:<RestaurentMenu/>
+    },
+    {
+      path:"/cart",
+      element:<Cart/>
     },
     
     ],
