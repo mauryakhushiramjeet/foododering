@@ -6,9 +6,9 @@ const About = () => {
         <div className="content">
           <p className="head">ABOUT US</p>
           <div className="title">
-            <p className="chief">
+            
               Khushi Chief
-            </p>
+            
             <p>..Restaurent</p></div>
          
             <br />

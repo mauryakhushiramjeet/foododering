@@ -1,19 +1,17 @@
 .container{
     height: 85vh;
-    /* border: 2px solid red; */
-    width:100rem;
+    width:100vw;
     position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #322D29;
 }
-.image{
-    height: 85vh;
-    width:50rem;
-    /* border: 2px solid yellow; */
-}
+
 .backimg{
     height: 85vh;
-    width:50rem;
+    width:40rem;
 }
 .content{
     background-color:#322D29;
@@ -21,6 +19,8 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    height: 85vh;
+    width: 40rem;
 }
 .head{
     position: absolute;
