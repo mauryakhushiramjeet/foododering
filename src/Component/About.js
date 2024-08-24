@@ -13,7 +13,7 @@ const About = () => {
          
             <br />
             <p className="state">
-            Welcome to KHUSHI❤️ Restaurant, where flavors and traditions come together. Our story began with a passion for serving authentic, mouth-watering dishes that transport you to a world of culinary delight. Our chefs use only the freshest ingredients, carefully selected to ensure a harmonious balance of taste and nutrition. We're dedicated to providing exceptional service, warm hospitality, and an unforgettable dining experience. 
+            Welcome to KHUSHI❤️ Restaurant, where flavors and traditions come together. Our story began with a passion for serving authentic, mouth-watering dishes that transport you to a world of culinary delight. Our chefs use only the freshest ingredients, carefully selected to ensure a harmonious balance of taste and nutrition.
             </p>
         </div>
         <div className="image">

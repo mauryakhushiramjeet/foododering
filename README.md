@@ -75,3 +75,14 @@ install react testing app
 - babel Babel depndeancies
 - Configure babel
 - Configure parcel config file to disable default babel transpiation
+# __tests__
+- any file which has exyention of .js and .ts inside __tests__ folder that is consider as test files
+- Header.test.js
+- Header.test.ts
+- Header.spect.js
+- Header.spect.ts
+___meand dendder method
+-install @babel/preset-react to make JSX Work in Test cases
+-include @babel/preset-react inside my babel config
+-install npm i -D @testing-library/jest-dom
+
