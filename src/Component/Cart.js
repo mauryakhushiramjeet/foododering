@@ -9,9 +9,9 @@ const Cart = () => {
       dispatch(clearCart())
     }
   return (
-    <div className=" m-4 p-4 text-center">
+    <div className=" m-4 p-4 text-center h-[100vh]">
       <h1 className="font-bold text-xl my-2">Cart</h1>
-    <div className="m-auto w-6/12 shadow-2xl">
+    <div className="m-auto 2xl:w-6/12 xl:w-8/12 lg:w-10/12 md-w-full shadow-2xl">
     <button className="m-2 p-2 bg-black text-white rounded-lg" onClick={handleclearcart}>Clear Cart</button>
     {cardItem.length===0&&<h1 className="text-lg my-3 text-red-800">Cart is empty . Add item to the Cart{"🛒"}!!</h1>}
     <ItemList items={cardItem}/>

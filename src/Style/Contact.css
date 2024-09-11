@@ -1,24 +1,29 @@
 .bg{
-background-image: url('https://img.freepik.com/free-photo/plates-with-chocolate-sticks-dark-background_23-2148340440.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1724198400&semt=ais_hybrid');
+background-image: url("https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3B4MTM2OTgxMy1pbWFnZS1rd3Z4eHA5MS5qcGc.jpg");
 height: 85vh;
+object-fit: cover;
 background-repeat: no-repeat;
 background-size: cover;
+opacity:1;
 }
 .form{
     display: flex;
    width: 30rem;
     flex-direction: column;
-    margin-left: 50rem;
+   
     height: 35rem;
-    box-shadow: 2px 2px 25px gray;
-    /* border: 2px solid red; */
+    /* box-shadow: 2px 2px 25px #0d7c66; */
+    /* background-color: black; */
+   /* border: 2px solid red; */
 
 
 }
 label{
     color: white;
     margin-top: 10px;
+    font-weight: 700;
     padding-left:1rem ;
+    font-size: 20px;
 }
 input{
     width: 20rem;
@@ -33,7 +38,7 @@ input{
     margin-left: 5px;
 }
 .btn{margin-top: 5rem;
-    background-color: gray;
+    background-color:white;
     border-radius: 5px;
     width: 5rem;
     text-align: center;
@@ -41,6 +46,7 @@ input{
     margin-top: 2rem;
     margin-left: 10rem;
     font-weight: 1000px;
+    font-weight: 500;
     /* margin-bottom: 20rem; */
 
   
@@ -61,4 +67,41 @@ input{
 .msg{
     font-size: xx-large;
     color: white;
+}
+@media (max-width:550px) {
+    .form{
+       width: 25rem;
+    }
+}
+@media (max-width:550px) {
+    .form{
+       width: 20rem;
+    }
+    .btn{
+        margin-left: 7rem;
+    }
+    input{
+        width: 18rem;
+       }
+}
+@media (max-width:450px) {
+   input{
+    width: 16rem;
+   }
+   .error{
+    font-size: 13px;
+   }
+}
+@media (max-width:350px) {
+    .form{
+       width: 16rem;
+       height: 35rem;
+
+    }
+    input{
+        width: 14rem;
+       }
+       .btn{
+        margin-left: 5rem;
+    }
 }

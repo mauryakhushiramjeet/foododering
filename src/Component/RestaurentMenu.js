@@ -28,8 +28,8 @@ const RestaurentMenu = () => {
       
         <div className='text-center'>
           
-            <h1 className="font-bold my-6 text-2xl">{name}</h1>
-          <p className="font-bold text-lg">{cuisines.join(",")}-{costForTwoMessage}</p>
+            <h1 className="font-bold my-6 text-2xl ">{name}</h1>
+          <p className="font-bold text-2xl  mb-10">{cuisines.join(",")}-{costForTwoMessage}</p>
           {categories.map((e,index)=>(
           <RestaurantCategories  
           data={e.card?.card} 

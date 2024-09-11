@@ -149,7 +149,9 @@ const config = {
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
-
+  moduleNameMapper: {
+    '\\.(css|less|scss|sass)$': 'identity-obj-proxy'
+  }
   // Adds a location field to test results
   // testLocationInResults: false,
 

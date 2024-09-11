@@ -1,51 +1,76 @@
-import { useContext, useState} from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "./useOnlineStatus";
 import UserContex from "./UserContex";
 import { useSelector } from "react-redux";
+import logo from "../assets/logo.png";
+import "../Style/Header.css";
 const Header = () => {
-    const [btn,setbtn]=useState("Login")
-    const onlineStatus=useOnlineStatus()
-    const{logdenUser}=useContext(UserContex)
-    //subscribing to the store using useSelector
-    const cartItem=useSelector((store)=>store.cart.item)
-// console.log(cartItem)
-  const[darkMode,setMode]=useState(false);
+  const [showUl, setShowUl] = useState("");
+  const [line1, setLine1] = useState("0deg");
+  const [line2, setLine2] = useState("0deg");
+const[gap,setGap]=useState("16px")
+  const [btn, setbtn] = useState("Login");
+  const onlineStatus = useOnlineStatus();
+  const { logdenUser } = useContext(UserContex);
+  //subscribing to the store using useSelector
+  const cartItem = useSelector((store) => store.cart.item);
+  // console.log(cartItem)
+  const [darkMode, setMode] = useState(false);
 
-const Handlemode=()=>{
-setMode(!darkMode)
-}
-    return (
-        <>
+  const Handlemode = () => {
+    setMode(!darkMode);
+  };
+  const handleMenu = () => {
+    showUl == "" ? setShowUl("flex") : setShowUl("");
+    line1 == "0deg" ? setLine1("410deg") : setLine1("0deg");
+    line2 == "0deg" ? setLine2("-410deg") : setLine2("0deg");
+    gap==="16px"?setGap("8px"):setGap("16px")
+  };
+  return (
+    <>
+      <div className="flex z-40 justify-between shadow-2xl h-28 lg:px-10 sm:px-2  items-center sticky top-0 bg-white w-full  ">
+        <div className="logo">
+          <img className="w-28" src={logo} alt="logo" />
+          <h1 className="font-bold  text-center text-xl text-[#0d7c66]">
+            Foodora
+          </h1>
+        </div>
 
-          <div className={`${darkMode&& "dark"}`}>
-          <div className="flex bg-pink-100 justify-between shadow-xl lg:bg-blue-100 sm:bg-yellow-50 dark:bg-[#0A131B]" >
-                <img className='w-28'
-                    src="https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png"  alt='logo' />
-
-                <div className="flex items-center">
-                    <ul className="flex p-4 m-4 sm:p-2 m-2 ">
-                        <li className="px-4 dark:text-white "> Online Status:{onlineStatus?"✅":"🔴"}</li>
-                        <li className="px-4 hover:font-bold dark:text-white"><Link to="/">Home</Link></li> 
-                        <li className="px-4 hover:font-bold dark:text-white"><Link to="/about">  About Us</Link> </li>
-                        <li className="px-4 hover:font-bold dark:text-white"><Link to="/contact">Contact us</Link></li>
-                        <li className="px-4 hover:font-bold dark:text-white"><Link to="/cart">🛒Cart-[{cartItem.length}]</Link></li>
-                        <button className="login dark:text-white" onClick={()=>
-                            {btn==="Login"
-                                ?setbtn("Logout")
-                                :setbtn("Login")}
-                        }>{btn}</button>
-                          <li className="px-4 font-bold dark:text-white">{logdenUser}</li>
-                         <li><button className="px-4 rounded-lg font-bold bg-[#0A131B] text-white  dark:bg-white text-slate-900"
-                         onClick={Handlemode}>{darkMode?'Light':'Dark'}</button></li>
-                        <li className="px-4 font-bold"></li>
-                    </ul>
-                </div>
-            </div>
-
-          </div>
-        </>
-    )
-}
+        <div className="flex items-center">
+          <ul className=" ul  " style={{ display: showUl }}>
+            <li>OS{onlineStatus ? "✅" : "🔴"}</li>
+            <li className="hover:bg-[#0d7c66] hover:text-white px-1 rounded-xl">
+              <Link to="/">Home</Link>
+            </li>
+            <li className="hover:bg-[#0d7c66]  hover:text-white px-1 rounded-xl">
+              <Link to="/about"> About Us</Link>{" "}
+            </li>
+            <li className="hover:bg-[#0d7c66]  hover:text-white px-1 rounded-xl">
+              <Link to="/contact">Contact us</Link>
+            </li>
+            <li className="hover:bg-[#0d7c66]   hover:text-white px-1 rounded-xl">
+              <Link to="/cart">Cart({cartItem.length})</Link>
+            </li>
+            <Link to={"/login"}>
+              <button
+                className="login hover:bg-[#0d7c66]   hover:text-white px-1 rounded-xl"
+                onClick={() => {
+                  btn === "Login" ? setbtn("Logout") : setbtn("Login");
+                }}
+              >
+                {btn}
+              </button>
+            </Link>
+          </ul>
+        </div>
+        <div className="Menu-button" onClick={handleMenu} style={{gap:gap}}>
+          <div className="line1 line" style={{ rotate: line1 }}></div>
+          <div className="line2 line" style={{ rotate: line2 }}></div>
+        </div>
+      </div>
+    </>
+  );
+};
 ////{"🏠"}{"🛒"}
 export default Header;

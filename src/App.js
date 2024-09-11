@@ -10,6 +10,8 @@ import UserContex from './Component/UserContex';
 import { Provider } from 'react-redux';
 import appStore from './Utill/appStore';
 // import Cart from './Component/Cart';
+import Footer from './Component/Footer';
+import Login from './Component/Login';
 
 
 const App = () => {
@@ -26,6 +28,7 @@ setUserName(data.name)
 <  div className='app'>
     <Header/>
     <Outlet/>
+<Footer/>
     </ div>
 </UserContex.Provider>
     </Provider>
@@ -60,6 +63,10 @@ element:<Suspense fallback={<h1>Loading.....</h1>}><About/></Suspense>
       path:"/cart",
       element:<Cart/>
     },
+    {
+      path:"/login",
+      element:<Login/>
+    }
     
     ],
     errorElement:<Error/>
