@@ -18,7 +18,7 @@ dispatch(addItem(item))
          <div className="w-[175px] h-32   relative">
           <img  src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/"+item?.card?.info?.imageId} className='Item-image '></img>
 
-          <button  className='Add   bg-black text-yellow-50 rounded-lg absolute  left-0 bottom-1 '
+          <button  className='Add   bg-black hover:bg-white hover:text-black font-bold hover:border border-black text-yellow-50 rounded-lg absolute p-[5px] left-0 bottom-1 active:scale-90 active:shadow-xl '
          onClick={()=>handleadditem(item)}>ADD+</button>
          </div>
          
