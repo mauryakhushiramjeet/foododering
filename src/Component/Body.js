@@ -21,7 +21,11 @@ const Body = () => {
         // console.log("body", ListofRestaurant)
     }, [])
     const fetchData = async () => {
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9352403&lng=77.624532&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
+        const data = await fetch("https://proxy.cors.sh/https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9352403&lng=77.624532&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING", {
+            headers: {
+            'x-cors-api-key': 'temp_3a2b8872186bd94bb1fa875b24f5203b'
+            }
+          })
         const json = await data.json();
         // console.log(js)
         //  setRestapi(json.data.cards)
@@ -35,20 +39,20 @@ const Body = () => {
         // setFilteredRestuarent(js?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
 
     }
-    const onlineStatus = useOnlineStatus()
-    if (onlineStatus === false) return <h1>Looks like you're Offline!!! Please cheak your Internet Connection.</h1>
-    return ListofRestaurant.length === 0 ? (<Shimmer />) : (
+ if(ListofRestaurant.length === 0) return <Shimmer />
+    
+    return  (
         <>
 
             <div className="body"  >
 
                 <ul className="body-button">
-                    <li className="search-list">
-                        <input type="text" className=" serch-box outline-none border rounded-l-full  
+                    <li className="search-list rounded-full flex">
+                        <input type="text" className=" h-full serch-box outline-none border rounded-l-full  
                       "placeholder="Search here.."
                             value={searchText} onChange={(e) => { setsearchText(e.target.value) }} />
                     
-                   <button className=" search-btn border rounded-r-full" onClick={() => {
+                   <button className=" search-btn  rounded-r-full h-full px-3 relative bottom-[2.3px] left-[1.5px]" onClick={() => {
                         const filterrestaurant = ListofRestaurant.filter((res) =>
                             res.info.name.toLowerCase().includes(searchText.toLowerCase())
                         );

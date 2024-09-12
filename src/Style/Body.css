@@ -1,11 +1,12 @@
 .serch-box{
-    border: 3px solid #0D7C66;
     width: 300px;
-    /* padding: 4px; */
     color: black;
-    padding: 5px 0px;
-    padding-left: 10px;
-    padding-right: 10px;
+    margin: 0;
+    outline: none;
+}
+.search-list{
+    border: 3px solid #0D7C66;
+    height: 50px;
 }
 .body-button{
     display: flex;
@@ -15,7 +16,8 @@
 .search-btn{
     background-color:  #0D7C66;
     color: white;
-    padding: 10px;
+    height: 50px;
+    /* padding: 10px; */
     /* margin-top: 25px; */
 }
 
@@ -28,6 +30,7 @@
     border-radius: 20px;
 }
 
+
 @media (max-width:774px) {
     .body-button{
         display: flex;
@@ -35,9 +38,7 @@
     }
 }
 @media (max-width:451px) {
-    .serch-box{
-        width: 200px;
-    }
+   
     .body-button{
         display: flex;
        flex-direction: column;
@@ -46,7 +47,7 @@
 }
 @media (max-width:451px) {
     .serch-box{
-        width: 100px;
+        width: 70vw;
         font-size: 17px;
         
     }
