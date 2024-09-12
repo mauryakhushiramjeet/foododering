@@ -38,7 +38,7 @@ const About = () => {
             --We serve dishes from all over the world
           </p>
           <Link to={"/"}>
-            <button className="btni  ">Order Now</button>
+            <button className="btni  active:scale-95">Order Now</button>
           </Link>
         </div>
         <div className="Image-container   w-[40%]  min-h-[100%]">
