@@ -9,7 +9,7 @@ const Cart = () => {
       dispatch(clearCart())
     }
   return (
-    <div className=" m-4 p-4 text-center h-[100vh]">
+    <div className=" m-4 p-4 text-center min-h-[80vh]">
       <h1 className="font-bold text-xl my-2">Cart</h1>
     <div className="m-auto 2xl:w-6/12 xl:w-8/12 lg:w-10/12 md-w-full shadow-2xl">
     <button className="m-2 p-2 bg-black text-white rounded-lg" onClick={handleclearcart}>Clear Cart</button>

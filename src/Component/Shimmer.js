@@ -12,27 +12,27 @@ const Shimmer = () => {
 
                 </ul>
     </div>
-     <div className='Shimmer-container'>
-       <div className='Shimmer-cards'></div>
-        <div className='Shimmer-cards'></div>
-       <div className='Shimmer-cards'></div>
-       <div className='Shimmer-cards'></div>
-       <div className='Shimmer-cards'></div>
-       <div className='Shimmer-cards'></div>
-        <div className='Shimmer-cards'></div>
-       <div className='Shimmer-cards'></div>
-       <div className='Shimmer-cards'></div>
-       <div className='Shimmer-cards'></div>
-       <div className='Shimmer-cards'></div>
-        <div className='Shimmer-cards'></div>
-       <div className='Shimmer-cards'></div>
-       <div className='Shimmer-cards'></div>
-       <div className='Shimmer-cards'></div>
-       <div className='Shimmer-cards'></div>
-        <div className='Shimmer-cards'></div>
-       <div className='Shimmer-cards'></div>
-       <div className='Shimmer-cards'></div>
-       <div className='Shimmer-cards'></div>
+     <div className='Shimmer-container w-[100vw]  flex justify-center items-center flex-col flex-wrap'>
+       <div className='Shimmer-cards mx-auto'></div>
+        <div className='Shimmer-cards mx-auto'></div>
+       <div className='Shimmer-cards mx-auto'></div>
+       <div className='Shimmer-cards mx-auto'></div>
+       <div className='Shimmer-cards mx-auto'></div>
+       <div className='Shimmer-cards mx-auto'></div>
+        <div className='Shimmer-cards mx-auto'></div>
+       <div className='Shimmer-cards mx-auto'></div>
+       <div className='Shimmer-cards mx-auto'></div>
+       <div className='Shimmer-cards mx-auto'></div>
+       <div className='Shimmer-cards mx-auto'></div>
+        <div className='Shimmer-cards mx-auto'></div>
+       <div className='Shimmer-cards mx-auto'></div>
+       <div className='Shimmer-cards mx-auto'></div>
+       <div className='Shimmer-cards mx-auto'></div>
+       <div className='Shimmer-cards mx-auto'></div>
+        <div className='Shimmer-cards mx-auto'></div>
+       <div className='Shimmer-cards mx-auto'></div>
+       <div className='Shimmer-cards mx-auto'></div>
+       <div className='Shimmer-cards mx-auto'></div>
     </div>
    </div>
   )

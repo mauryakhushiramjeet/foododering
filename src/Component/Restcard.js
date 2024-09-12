@@ -5,7 +5,7 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 const Restcard = ({ datas }) => {
     const { logdenUser } = useContext(UserContex)
-    console.log(datas)
+    // console.log(datas)
     const {
         name,
         cloudinaryImageId,
