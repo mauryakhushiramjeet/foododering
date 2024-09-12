@@ -56,7 +56,7 @@ const Header = () => {
                 Contact us
               </li>
             </Link>
-            <Link to="/cart">
+            <Link to="/cartpage">
               <li className="hover:bg-[#0d7c66]   hover:text-white px-1 rounded-xl">
                 Cart({cartItem.length})
               </li>
