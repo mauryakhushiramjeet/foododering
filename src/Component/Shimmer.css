@@ -1,11 +1,14 @@
 .Shimmer-container{
-height: 100vh;
+
 display: flex;
 flex-wrap: wrap;
+justify-content: center;
+align-items: center;
 
 }
 .Shimmer-cards{
-width: 200px;
+    border-radius: 10px;
+width: 250px;
 height: 300px;
 background-color: #dedada;
 margin: 20px;
