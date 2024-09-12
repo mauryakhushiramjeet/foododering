@@ -9,7 +9,7 @@ const Header = () => {
   const [showUl, setShowUl] = useState("");
   const [line1, setLine1] = useState("0deg");
   const [line2, setLine2] = useState("0deg");
-const[gap,setGap]=useState("16px")
+  const [gap, setGap] = useState("16px");
   const [btn, setbtn] = useState("Login");
   const onlineStatus = useOnlineStatus();
   const { logdenUser } = useContext(UserContex);
@@ -25,7 +25,7 @@ const[gap,setGap]=useState("16px")
     showUl == "" ? setShowUl("flex") : setShowUl("");
     line1 == "0deg" ? setLine1("410deg") : setLine1("0deg");
     line2 == "0deg" ? setLine2("-410deg") : setLine2("0deg");
-    gap==="16px"?setGap("8px"):setGap("16px")
+    gap === "16px" ? setGap("8px") : setGap("16px");
   };
   return (
     <>
@@ -40,18 +40,27 @@ const[gap,setGap]=useState("16px")
         <div className="flex items-center">
           <ul className=" ul  " style={{ display: showUl }}>
             <li>OS{onlineStatus ? "✅" : "🔴"}</li>
-            <li className="hover:bg-[#0d7c66] hover:text-white px-1 rounded-xl">
-              <Link to="/">Home</Link>
-            </li>
-            <li className="hover:bg-[#0d7c66]  hover:text-white px-1 rounded-xl">
-              <Link to="/about"> About Us</Link>{" "}
-            </li>
-            <li className="hover:bg-[#0d7c66]  hover:text-white px-1 rounded-xl">
-              <Link to="/contact">Contact us</Link>
-            </li>
-            <li className="hover:bg-[#0d7c66]   hover:text-white px-1 rounded-xl">
-              <Link to="/cart">Cart({cartItem.length})</Link>
-            </li>
+            <Link to="/">
+              <li className="hover:bg-[#0d7c66] hover:text-white px-1 rounded-xl">
+                Home
+              </li>
+            </Link>
+
+            <Link to="/about">
+              <li className="hover:bg-[#0d7c66]  hover:text-white px-1 rounded-xl">
+                About Us
+              </li>
+            </Link>
+            <Link to="/contact">
+              <li className="hover:bg-[#0d7c66]  hover:text-white px-1 rounded-xl">
+                Contact us
+              </li>
+            </Link>
+            <Link to="/cart">
+              <li className="hover:bg-[#0d7c66]   hover:text-white px-1 rounded-xl">
+                Cart({cartItem.length})
+              </li>
+            </Link>
             <Link to={"/login"}>
               <button
                 className="login hover:bg-[#0d7c66]   hover:text-white px-1 rounded-xl"
@@ -64,7 +73,7 @@ const[gap,setGap]=useState("16px")
             </Link>
           </ul>
         </div>
-        <div className="Menu-button" onClick={handleMenu} style={{gap:gap}}>
+        <div className="Menu-button" onClick={handleMenu} style={{ gap: gap }}>
           <div className="line1 line" style={{ rotate: line1 }}></div>
           <div className="line2 line" style={{ rotate: line2 }}></div>
         </div>
